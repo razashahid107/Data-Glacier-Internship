@@ -12,11 +12,10 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def get_data():
     if request.method == 'POST':
-        print(request.form)
-        user = request.form['search']
         return redirect(url_for('/'))
     else:
         return render_template('index.html')
+
 
 @app.route('/get-sentiment', methods=['POST'])
 def predictor():
